@@ -43,12 +43,24 @@ class AppearanceOptions extends OptionsScreen {
 				"gpuOnlyBitmaps"));
 		}
 		#end
+		#if MODCHARTING_FEATURES
+		add(new NumOption(
+			"Hold Subdivitions",
+			"[Modcharting Feature] Softens the tail/hold/sustain of the arrows by subdividing it, giving them greater quality. By higher the subdivitions number is, performance will be affected.",
+			1, // minimum
+			128, // maximum
+			1, // change
+			"hold_subs", // save name or smth
+			__changeHoldSubs)); // callback
+		#end
 		add(new Checkbox(
 			"Auto Pause",
 			"If checked, switching windows will pause the game.",
 			"autoPause"));
 	}
-
+	private function __changeHoldSubs(change:Float) {
+		trace("New subdivision count: "+change);
+	}
 	private function __changeFPS(change:Float) {
 		// if statement cause of the flixel warning
 		if(FlxG.updateFramerate < Std.int(change))
