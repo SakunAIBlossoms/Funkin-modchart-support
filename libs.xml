@@ -16,6 +16,7 @@
 
 	<!-- Documentation and other features -->
 	<git name="away3d" url="https://github.com/CodenameCrew/away3d" />
+	<git name="funkin-modchart" url="https://github.com/TheoDevelops/FunkinModchart" />
 	<!-- <lib name="dox" /> -->
 	<lib name="format" />
 	<lib name="markdown" />
