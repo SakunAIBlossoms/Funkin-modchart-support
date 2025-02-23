@@ -37,6 +37,7 @@ class Options
 	public static var gpuOnlyBitmaps:Bool = #if (mac || web) false #else true #end; // causes issues on mac and web
 	#if MODCHARTING_FEATURES
 	public static var hold_subs:Int = 4;
+	public static var modchartingHoldSubdivisions:Int = hold_subs;
 	#end
 
 	public static var lastLoadedMod:String = null;
