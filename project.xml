@@ -156,6 +156,9 @@
 	<!-- Comment this out to disable commit number on FPS -->
 	<define name="SHOW_BUILD_ON_FPS" />
 
+	<!-- Comment out to disable modcharts -->
+	<define name="MODCHARTING_FEATURES"/>
+
 	<!-- Comment this out to disable dark mode windows -->
 	<define name="DARK_MODE_WINDOW"/>
 
@@ -177,6 +180,10 @@
 	<define name="disable-version-check"/>
 	<haxedef name="disable-version-check"/>
 
+	<!-- Funkin-modchart information -->
+	<haxedef name="FM_ENGINE" value="CODENAME"/>
+	<haxedef name="FM_ENGINE_VERSION" value=""/>
+
 	<haxedef name="no-deprecation-warnings"/>
 	<haxedef name="DISCORD_DISABLE_IO_THREAD" if="DISCORD_RPC"/>
 
@@ -193,13 +200,16 @@
 	<haxelib name="hxdiscord_rpc" if="DISCORD_RPC"/>
 	<haxelib name="markdown" />
 
+	<haxelib name="funkin-modchart" />
+
 	<!-- _________________________________ Additional stuff _______________________________ -->
 
 	<section if="COMPILE_ALL_CLASSES">
 		<haxeflag name="-dce" value="no" />
 		<haxeflag name="--macro" value="funkin.backend.system.macros.Macros.addAdditionalClasses()" />
 	</section>
-
+		
+	<haxeflag name="--macro" value="modchart.core.macros.Macro.includeFiles()"/>
 	<haxeflag name="--macro" value="funkin.backend.system.macros.Macros.initMacros()" />
 
 	<!-- Fix compiling issues -->
